@@ -1,4 +1,4 @@
-package libase;
+package TubesPBO_Libase;
 
 import java.util.Scanner;
 
