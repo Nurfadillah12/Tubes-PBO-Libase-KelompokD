@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class perpustakaan extends user {
-    protected String[] data = {"Laskar Pelangi","Kambing Jantan","Marmut Merah Jambu","Ubur-Ubur Lembur","Manusia Setengah Salmon","Koala Kumal","Filosofi Kopi","Hantu Bangku Kosong"};
+    protected String[] data = {"Laskar Pelangi","Kambing Jantan","Marmut Merah Jambu","Ubur-Ubur Lembur","Manusia Setengah Salmon","Koala Kumal","Filosofi Kopi","Hantu Bangku Kosong","Sang Pemimpi","Orang-orang Biasa","Negeri Para Berdebah","Hujan","Rembulan Tenggelam di Wajahmu","Cinta Brontosaurus","Kasat Mata","Kumpulan Budak Setan","Lelaki Harimau","Serendipity","Anak Semu Bangsa","Jejak Langkah"};
     public void setNim(int n)
     {
         super.nim = n;
