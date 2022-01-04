@@ -4,9 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class perpustakaan extends data {
-
+public class perpustakaan extends user {
     protected String[] data = {"Laskar Pelangi","Kambing Jantan","Marmut Merah Jambu","Ubur-Ubur Lembur","Manusia Setengah Salmon","Koala Kumal","Filosofi Kopi","Hantu Bangku Kosong"};
+    public void setNim(int n)
+    {
+        super.nim = n;
+    }
+    public void setNama(String n)
+    {
+        super.nama = n;
+    }
     public static void insertionAsc(String array[])
     {
         String temp;
@@ -20,12 +27,12 @@ public class perpustakaan extends data {
                 j--;
             }
         }
-        System.out.println("Daftar Buku yang tersedia berdasarkan Abjad (ASC): ");
+//        System.out.println("Daftar Buku yang tersedia berdasarkan Abjad (ASC): ");
         for (int i = 0; i < array.length; i++) {
             System.out.println(+ (i+1) + ". " + array[i]);
         }
     }
-    public static void insert(String db[], int jumlah, int nim, String namaMHS)
+    public void insert(String db[], int jumlah)
     {
         Scanner a = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
@@ -44,7 +51,7 @@ public class perpustakaan extends data {
                 System.out.print("\n- Masukkan Judul Buku ke-" + (b + 1) + "\t= ");
                 judul_arr[b] = scanner.nextLine();
             }
-            int result = sequential(db, judul_arr[b]);
+            int result = sequential(db, judul_arr[b].toLowerCase());
             if(result == -1)
             {
                 System.out.println("  Buku '"+ judul_arr[b] + "' tidak ditemukan");
@@ -70,7 +77,7 @@ public class perpustakaan extends data {
             }
 
         }
-        cetak(namaMHS,nim,total_harga,jumlah,judul_arr,jenis_arr,waktu_arr,harga_sewa_arr);
+        cetak(super.nama,super.nim,total_harga,jumlah,judul_arr,jenis_arr,waktu_arr,harga_sewa_arr);
     }
     public static void cetak(String namaMHS, int nim, int total_harga, int jumlah, String judul_arr[], int jenis_arr[], int waktu_arr[], int harga_sewa_arr[])
     {
@@ -81,7 +88,7 @@ public class perpustakaan extends data {
         System.out.println ("==========================================================");
         for (int b = 0;b<jumlah;b++)
         {
-            System.out.println("- Judul Buku ke-" + (b+1) +"\t\t\t= " + judul_arr [b]);
+            System.out.println("- Judul Buku ke-" + (b+1) +"\t\t\t= " + judul_arr[b]);
             if(jenis_arr[b] == 1)
             {
                 Calendar kalender = Calendar.getInstance();
@@ -112,7 +119,7 @@ public class perpustakaan extends data {
         int n = arr.length;
         for (int i = 0; i < n; i++)
         {
-            if(x.equals(arr[i]))
+            if(x.equals(arr[i].toLowerCase()))
             {
                 return i;
             }
