@@ -2,6 +2,7 @@ package TubesPBO_Libase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class perpustakaan extends user {
@@ -51,7 +52,7 @@ public class perpustakaan extends user {
                 System.out.print("\n- Masukkan Judul Buku ke-" + (b + 1) + "\t= ");
                 judul_arr[b] = scanner.nextLine();
             }
-            int result = sequential(db, judul_arr[b].toLowerCase());
+            int result = sequential(db, judul_arr[b]);
             if(result == -1)
             {
                 System.out.println("  Buku '"+ judul_arr[b] + "' tidak ditemukan");
@@ -119,7 +120,7 @@ public class perpustakaan extends user {
         int n = arr.length;
         for (int i = 0; i < n; i++)
         {
-            if(x.equals(arr[i].toLowerCase()))
+            if(x.toLowerCase(Locale.ROOT).equals(arr[i].toLowerCase()))
             {
                 return i;
             }
