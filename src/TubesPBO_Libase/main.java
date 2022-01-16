@@ -3,13 +3,23 @@ package TubesPBO_Libase;
 import java.util.Scanner;
 
 public class main {
+
+    // Method Main
     public static void main(String[] args) {
+
+        // Memanggil class Perpustakaan
         perpustakaan perpus = new perpustakaan();
+
+        // Menginputkan Data
         Scanner a = new Scanner(System.in);
+
+        // Variabel
         int nim, jumlah;
         String namaMHS;
         System.out.println("==== Selamat Datang di Peminjaman Buku (Perpustakaan) ====");
         String[] db = perpus.getData();
+
+        // Memanggil method dari class Perpustakaan
         perpus.insertionAsc(db);
         System.out.println ("\n===========================================================");
         System.out.println ("INPUT DATA PEMINJAM");

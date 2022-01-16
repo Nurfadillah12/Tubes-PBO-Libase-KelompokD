@@ -5,8 +5,12 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Scanner;
 
+// Inheritance dari class User
 public class perpustakaan extends user {
+    // Array Data Buku
     protected String[] data = {"Laskar Pelangi","Kambing Jantan","Marmut Merah Jambu","Ubur-Ubur Lembur","Manusia Setengah Salmon","Koala Kumal","Filosofi Kopi","Hantu Bangku Kosong","Sang Pemimpi","Orang-orang Biasa","Negeri Para Berdebah","Hujan","Rembulan Tenggelam di Wajahmu","Cinta Brontosaurus","Kasat Mata","Kumpulan Budak Setan","Lelaki Harimau","Serendipity","Anak Semu Bangsa","Jejak Langkah"};
+
+    // Method Inheritance
     public void setNim(int n)
     {
         super.nim = n;
@@ -17,7 +21,11 @@ public class perpustakaan extends user {
     }
     public static void insertionAsc(String array[])
     {
+
+        // Variabel Temp
         String temp;
+
+        // looping
         for (int i = 0; i < array.length; i++)
         {
             int j = i;
@@ -33,8 +41,10 @@ public class perpustakaan extends user {
             System.out.println(+ (i+1) + ". " + array[i]);
         }
     }
+    // Method Insert
     public void insert(String db[], int jumlah)
     {
+        // Variabel
         Scanner a = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
         int total_harga=0;
@@ -44,6 +54,7 @@ public class perpustakaan extends user {
         int sub_harga_arr[] = new int[jumlah];
         String judul_arr[] = new String[jumlah];
 
+        // Looping
         for (int b = 0; b < jumlah; b++)
         {
             boolean ulang = true;
@@ -53,6 +64,8 @@ public class perpustakaan extends user {
                 judul_arr[b] = scanner.nextLine();
             }
             int result = sequential(db, judul_arr[b]);
+
+            // Kondisi Pencarian Judul Buku
             if(result == -1)
             {
                 System.out.println("  Buku '"+ judul_arr[b] + "' tidak ditemukan");
@@ -66,6 +79,8 @@ public class perpustakaan extends user {
                 jenis_arr[b] = a.nextInt();
                 System.out.print("  Waktu Pengembalian (hari)\t= ");
                 waktu_arr[b] = a.nextInt();
+
+                // Percabangan
                 if(jenis_arr[b]==1){
                     harga_sewa_arr[b] = 5000;
                     sub_harga_arr[b] = harga_sewa_arr[b] * waktu_arr[b];
@@ -80,6 +95,7 @@ public class perpustakaan extends user {
         }
         cetak(super.nama,super.nim,total_harga,jumlah,judul_arr,jenis_arr,waktu_arr,harga_sewa_arr);
     }
+    // Method Cetak
     public static void cetak(String namaMHS, int nim, int total_harga, int jumlah, String judul_arr[], int jenis_arr[], int waktu_arr[], int harga_sewa_arr[])
     {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -87,9 +103,12 @@ public class perpustakaan extends user {
         System.out.println ("==========================================================");
         System.out.println ("DAFTAR BUKU YANG DIPINJAM " + sdf.format(cal.getTime()));
         System.out.println ("==========================================================");
+
+        // Looping
         for (int b = 0;b<jumlah;b++)
         {
             System.out.println("- Judul Buku ke-" + (b+1) +"\t\t\t= " + judul_arr[b]);
+            // Kondisi
             if(jenis_arr[b] == 1)
             {
                 Calendar kalender = Calendar.getInstance();
@@ -114,12 +133,17 @@ public class perpustakaan extends user {
         System.out.println ("Nim Mahasiswa\t\t\t\t= "+nim);
         System.out.println ("Total Biaya Pinjam\t\t\t= Rp."+total_harga);
     }
-
+    // Method Sequential
     public static int sequential(String arr[], String x)
     {
+        // Variabel
         int n = arr.length;
+
+        //Looping
         for (int i = 0; i < n; i++)
         {
+
+            //Kondisi
             if(x.toLowerCase(Locale.ROOT).equals(arr[i].toLowerCase()))
             {
                 return i;
@@ -127,6 +151,8 @@ public class perpustakaan extends user {
         }
         return -1;
     }
+
+    //Method GetData
     public String[] getData()
     {
         return this.data;
