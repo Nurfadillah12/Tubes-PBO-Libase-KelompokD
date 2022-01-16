@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ef0d6cd-c2a7-4442-9746-2ff0771b2b9a" name="Changes" comment="" />
+    <list default="true" id="5ef0d6cd-c2a7-4442-9746-2ff0771b2b9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TubesPBO_Libase/perpustakaan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TubesPBO_Libase/perpustakaan.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

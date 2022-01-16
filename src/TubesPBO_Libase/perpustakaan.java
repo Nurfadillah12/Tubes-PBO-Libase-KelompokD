@@ -75,8 +75,17 @@ public class perpustakaan extends user {
             else
             {
 //                System.out.println("Buku '" + judul_arr[b] + "' ditemukan");
-                System.out.print("  Jenis Buku\t\t\t\t= 1. E-Book | 2. Fisik \n  Masukkan Pilihan Buku\t\t= ");
-                jenis_arr[b] = a.nextInt();
+                boolean ulang2 = true;
+                while(ulang2)
+                {
+                    ulang2 = false;
+                    System.out.print("  Jenis Buku\t\t\t\t= 1. E-Book | 2. Fisik \n  Masukkan Pilihan Buku\t\t= ");
+                    jenis_arr[b] = a.nextInt();
+                    if (jenis_arr[b] != 1 && jenis_arr[b] != 2) {
+                        System.out.println("  Masukkan ulang jenis buku!");
+                        ulang2 = true;
+                    }
+                }
                 System.out.print("  Waktu Pengembalian (hari)\t= ");
                 waktu_arr[b] = a.nextInt();
 
